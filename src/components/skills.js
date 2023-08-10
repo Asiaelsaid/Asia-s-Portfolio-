@@ -5,7 +5,7 @@ import JavaScript from "../assets/javascript.png";
 import ReactImg from "../assets/react.png";
 import Node from "../assets/node.png";
 // import FireBase from "../assets/firebase.png";
-import GitHub from "../assets/github1.png";
+import GitHub from "../assets/b51b78ecc9e5711274931774e433b5e6.jpg";
 import Tailwind from "../assets/tailwind.png";
 import angular  from '../assets/angular.png';
 const Skills = () => {

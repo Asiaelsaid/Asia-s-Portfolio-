@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/logo1.png";
+
 import {
   FaBars,
   FaTimes,
@@ -111,8 +111,9 @@ const Navbar = () => {
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]">
             <a
               className="flex justify-between items-center w-full text-gray-300"
-              href="asiaelsaid665@gmail.com"
+              href="mailto:asiaelsaid655@email.com"
             >
+            
               Email <HiOutlineMail size={30} />
             </a>
           </li>
