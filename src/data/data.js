@@ -1,5 +1,5 @@
 import souqCar from '../assets/projects/souqCar.png'
-import babyStore from '../assets/projects/babyStore.png'
+import babyStore from '../assets/projects/babyStore1.png';
 import movieStoe from '../assets/projects/movueStoe.png'
 import shopStore from '../assets/projects/shopStore.png'
 
