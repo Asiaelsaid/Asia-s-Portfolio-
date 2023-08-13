@@ -25,16 +25,13 @@ const Contact = () => {
             : " name must  be at least 3 char long ",
       });
     } else if (event.target.name === "message") {
-      const regtextMessage =/^\w{10,}/;
+      // const regtextMessage =/^\w{7,}/;
       setValues({ ...values, message: event.target.value });
       setErrors({
         ...errors,
         textMessageError:
           event.target.value.length === 0
-            ? "Message must be filled out"
-            : regtextMessage.test(event.target.value)
-            ? ""
-            : " Message must  be at least 10 char long ",
+            ? "Message must be filled out":"",
       });
     } else if (event.target.name === "email") {
       const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
