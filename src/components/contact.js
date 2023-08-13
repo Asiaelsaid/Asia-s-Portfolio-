@@ -4,10 +4,12 @@ const Contact = () => {
   const [values, setValues] = useState({
     name: "",
     email: "",
+    message:"",
   });
   const [errors, setErrors] = useState({
     nameError: "",
     emailError: "",
+    textMessageError:"",
   });
   const validateValues = (event) => {
     if (event.target.name === "name") {
@@ -21,6 +23,18 @@ const Contact = () => {
             : regName.test(event.target.value)
             ? ""
             : " name must  be at least 3 char long ",
+      });
+    } else if (event.target.name === "message") {
+      const regtextMessage =/^\w{10,}/;
+      setValues({ ...values, message: event.target.value });
+      setErrors({
+        ...errors,
+        textMessageError:
+          event.target.value.length === 0
+            ? "Message must be filled out"
+            : regtextMessage.test(event.target.value)
+            ? ""
+            : " Message must  be at least 10 char long ",
       });
     } else if (event.target.name === "email") {
       const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -64,7 +78,7 @@ const Contact = () => {
             validateValues(e);
           }}
         />
-        <p className="text-white"> {errors.nameError}</p>
+        <p className="text-pink-300"> {errors.nameError}</p>
         <input
           className="my-4 p-2 bg-[#ccd6f6]"
           type="email"
@@ -74,13 +88,18 @@ const Contact = () => {
             validateValues(e);
           }}
         />
-        <p className="text-white"> {errors.emailError}</p>
+        <p className="text-pink-300"> {errors.emailError}</p>
         <textarea
           className="bg-[#ccd6f6] p-2"
           name="message"
           rows="10"
           placeholder="Message"
-        ></textarea>
+          onChange={(e) => {
+            validateValues(e);
+          }}
+        >
+        </textarea>
+        <p className="text-pink-300"> {errors.textMessageError}</p>
         <button className="text-white border-2 hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-center">
           Let's Collaborate
         </button>
